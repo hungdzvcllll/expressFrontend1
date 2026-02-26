@@ -5,4 +5,4 @@ COPY package.json /app
 COPY .. /app
 RUN npm install --omit=dev
 
-CMD ["npm", "start"]
+CMD ["npm", "run","start"]
