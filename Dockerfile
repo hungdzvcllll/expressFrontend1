@@ -9,7 +9,7 @@ WORKDIR /usr/app
 
 # install and cache app dependencies
 RUN npm install --omit=dev
-#RUN npm run build
+RUN npm run build
 CMD ["npm","start"]
 # add `/usr/src/app/node_modules/.bin` to $PATH
 
