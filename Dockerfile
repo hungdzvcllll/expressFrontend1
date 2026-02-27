@@ -5,5 +5,7 @@ COPY package.json /app
 COPY .. /app
 RUN npm install --omit=dev
 RUN npm run build
+FROM nginx:stable-alpine AS production
+COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
-CMD ["npm", "run","start"]
+CMD ["nginx", "-g", "daemon off;"]
