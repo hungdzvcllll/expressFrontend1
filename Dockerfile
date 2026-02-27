@@ -11,7 +11,6 @@ WORKDIR /usr/app
 RUN npm install
 
 # add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 RUN npm run build
 
