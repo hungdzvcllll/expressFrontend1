@@ -4,7 +4,7 @@ FROM node:22 as build-stage
 RUN mkdir /usr/app
 WORKDIR /usr/app
 #copy all files from current directory to docker
-COPY . /usr/app
+COPY . .
 WORKDIR /usr/app
 RUN sh permission.sh
 # install and cache app dependencies
