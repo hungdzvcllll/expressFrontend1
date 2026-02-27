@@ -8,7 +8,9 @@ COPY . /usr/app
 WORKDIR /usr/app
 
 # install and cache app dependencies
+RUN rm -rf /user/app/node_modules/
 RUN npm install
+RUN npm run build
 CMD ["npm","start"]
 # add `/usr/src/app/node_modules/.bin` to $PATH
 
