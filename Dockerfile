@@ -10,7 +10,7 @@ RUN sh permission.sh
 RUN npm install --omit=dev
 #RUN npm run build
 
-RUN npm run build
+RUN npm run build OR yarn 
 
 CMD ["npm","start"]
 # add `/usr/src/app/node_modules/.bin` to $PATH
