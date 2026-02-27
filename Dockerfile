@@ -12,7 +12,7 @@ RUN npm install
 
 # add `/usr/src/app/node_modules/.bin` to $PATH
 
-RUN npm run build
+#RUN npm run build
 
 # Stage 2
 # Copy the react app build above in nginx
