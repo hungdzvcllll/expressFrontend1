@@ -1,4 +1,4 @@
-FROM node:12.18.2 as build-stage
+FROM node:22 as build-stage
 
 # set working directory
 RUN mkdir /usr/app
