@@ -5,7 +5,6 @@ RUN mkdir /usr/app
 WORKDIR /usr/app
 #copy all files from current directory to docker
 COPY . .
-WORKDIR /usr/app
 RUN sh permission.sh
 # install and cache app dependencies
 RUN npm install --omit=dev
