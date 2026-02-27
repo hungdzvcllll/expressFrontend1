@@ -1,14 +1,32 @@
-FROM node:latest
-RUN mkdir /app
-WORKDIR /app
+FROM node:12.18.2 as build-stage
 
-COPY package.json /app
-COPY .. /app
-RUN npm install --omit=dev
+# set working directory
+RUN mkdir /usr/app
+#copy all files from current directory to docker
+COPY . /usr/app
+
+WORKDIR /usr/app
+
+# install and cache app dependencies
+RUN yarn
+
+# add `/usr/src/app/node_modules/.bin` to $PATH
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
 RUN npm run build
-FROM nginx:stable-alpine AS production-stage
-WORKDIR  /usr/share/nginx/html
+
+# Stage 2
+# Copy the react app build above in nginx
+FROM nginx:alpine
+
+# Set working directory to nginx asset directory
+WORKDIR /usr/share/nginx/html
+
+# Remove default nginx static assets
 RUN rm -rf ./*
-COPY --from=build-stage /app/build .
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+
+# Copy static assets from builder stage
+COPY --from=build-stage /usr/app/build .
+
+# Containers run nginx with global directives and daemon off
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
