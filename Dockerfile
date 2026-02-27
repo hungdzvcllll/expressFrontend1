@@ -8,6 +8,6 @@ RUN npm run build
 FROM nginx:stable-alpine AS production-stage
 WORKDIR  /usr/share/nginx/html
 RUN rm -rf ./*
-COPY  /app/build    /usr/share/nginx/html
+COPY --from=build-stage app/build .
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
