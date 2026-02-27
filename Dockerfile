@@ -6,7 +6,7 @@ COPY .. /app
 RUN npm install --omit=dev
 RUN npm run build
 FROM nginx:stable-alpine AS production-stage
-COPY /app  /usr/share/nginx/html
+COPY ..  /usr/share/nginx/html
 EXPOSE 80
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
