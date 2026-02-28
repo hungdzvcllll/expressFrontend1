@@ -13,9 +13,11 @@ RUN sh permission.sh
 # install and cache app dependencies
 
 #RUN npm run build 
-#=FROM nginx:alpine
+FROM nginx:alpine
 
 # Set working directory to nginx asset directory
+RUN mkdir /usr/share/nginx/html
+
 WORKDIR /usr/share/nginx/html
 
 # Remove default nginx static assets
