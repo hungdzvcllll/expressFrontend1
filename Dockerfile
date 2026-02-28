@@ -16,7 +16,7 @@ RUN sh permission.sh
 #RUN npm run build 
 FROM caddy
 # Create and change to the app directory.
-WORKDIR /app
+WORKDIR /usr/app
 # Copy Caddyfile to the container image.
 COPY Caddyfile ./
 # Copy local code to the container image.
