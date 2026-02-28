@@ -6,6 +6,7 @@ WORKDIR /usr/app
 COPY . .
 #copy all files from current directory to docker
 
+
 RUN npm install --omit=dev
 RUN npm install -g vite
 COPY . .
