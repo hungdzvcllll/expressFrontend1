@@ -3,6 +3,7 @@ FROM node:latest as build-stage
 # set working directory
 RUN mkdir /usr/app
 WORKDIR /usr/app
+COPY . .
 #copy all files from current directory to docker
 RUN npm install --omit=dev
 RUN npm install -g vite
