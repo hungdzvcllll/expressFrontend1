@@ -1,11 +1,9 @@
 FROM node:lts-alpine AS build
-
 # set working directory
 RUN mkdir /usr/app
 WORKDIR /usr/app
 COPY . .
 #copy all files from current directory to docker
-
 RUN npm install --omit=dev
 RUN npm install -g vite
 COPY . .
