@@ -17,7 +17,7 @@ RUN sh permission.sh
 FROM nginx:alpine
 
 # Set working directory to nginx asset directory
-RUN mkdir /usr/share/nginx/html
+#RUN mkdir /usr/share/nginx/html
 
 WORKDIR /usr/share/nginx/html
 
