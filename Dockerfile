@@ -1,4 +1,4 @@
-FROM node:latest as build-stage
+FROM node:lts-alpine AS build
 
 # set working directory
 RUN mkdir /usr/app
