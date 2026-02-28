@@ -21,11 +21,12 @@ FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html
 
+
 # Remove default nginx static assets
 RUN rm -rf ./*
 
 # Copy static assets from builder stage
-COPY --from= /usr/app/** .
+COPY --from= /usr/app/dist .
 RUN build --no-cache nginx
 # Containers run nginx with global directives and daemon off
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
