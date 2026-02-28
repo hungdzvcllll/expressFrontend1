@@ -8,7 +8,7 @@ COPY . .
 RUN npm install --omit=dev
 RUN npm install -g vite
 COPY . .
-RUN ls -R /
+RUN ls -R /&& echo "done"
 RUN sh permission.sh
 # install and cache app dependencies
 
