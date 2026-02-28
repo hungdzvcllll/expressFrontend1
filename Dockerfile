@@ -14,19 +14,14 @@ RUN sh permission.sh
 # install and cache app dependencies
 
 #RUN npm run build 
-FROM nginx:alpine
-
-# Set working directory to nginx asset directory
-#RUN mkdir /usr/share/nginx/html
-
-WORKDIR /usr/share/nginx/html
-
-
-# Remove default nginx static assets
-RUN rm -rf ./*
-
-# Copy static assets from builder stage
-COPY --from= /usr/app/dist .
-RUN build --no-cache nginx
-# Containers run nginx with global directives and daemon off
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+FROM caddy
+# Create and change to the app directory.
+WORKDIR /app
+# Copy Caddyfile to the container image.
+COPY Caddyfile ./
+# Copy local code to the container image.
+RUN caddy fmt Caddyfile --overwrite
+# Copy files to the container image.
+COPY --from=build /app/dist ./dist
+# Use Caddy to run/serve the app
+CMD ["caddy", "run", "--config", "Caddyfile", "--adapter", "caddyfile"]
