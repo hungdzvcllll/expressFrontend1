@@ -3,7 +3,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
-        "start": "serve -s dist -l $PORT",
+    "start": "vite preview --host 0.0.0.0 --port $PORT",
     "build": "vite build",
     "preview": "vite preview",
     "test:e2e:build": "npm run build"
@@ -15,8 +15,7 @@
     "axios": "^1.13.5",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router-dom": "^7.13.0",
-    "serve": "^13.0.4"
+    "react-router-dom": "^7.13.0"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
