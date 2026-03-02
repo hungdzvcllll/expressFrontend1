@@ -3,10 +3,10 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
+        "start": "serve -s dist -l $PORT",
     "build": "vite build",
-
     "preview": "vite preview",
-    "test:e2e:build":"npm run build"
+    "test:e2e:build": "npm run build"
   },
   "compilerOptions": {
     "module": "commonjs"
@@ -15,7 +15,8 @@
     "axios": "^1.13.5",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router-dom": "^7.13.0"
+    "react-router-dom": "^7.13.0",
+    "serve": "^13.0.4"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
@@ -24,6 +25,6 @@
     "vite": "^7.3.1"
   },
   "optionalDependencies": {
-  "@rollup/rollup-linux-x64-gnu": "4.9.5"
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
   }
 }
