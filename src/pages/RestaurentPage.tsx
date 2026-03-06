@@ -152,7 +152,7 @@ const RestaurantPage: React.FC = () => {
           {dishes.map((dish) => (
             <div key={dish.id} style={styles.card}>
               <img
-                src={"http://localhost:3000" + dish.image}
+                src={"https://expressbackend-production-032e.up.railway.app" + dish.image}
                 alt={dish.name}
                 style={styles.dishImage}
               />
