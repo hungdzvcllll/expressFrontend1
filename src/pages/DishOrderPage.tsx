@@ -121,7 +121,7 @@ export default function DishOrderPage() {
             }}
           >
             <img
-              src={"http://localhost:3000"+dish.image}
+              src={"https://expressbackend-production-032e.up.railway.app"+dish.image}
               alt={dish.name}
               style={{ width: "100%", height: "150px", objectFit: "cover" }}
             />
