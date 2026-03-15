@@ -26,7 +26,7 @@ const TableOrderPage = () => {
 
     try {
       const res = await fetch(
-        `https://expressbackend-production-032e.up.railway.app/tableOrder/freeTime?tableId=${tableId}&date=${date}`,
+        `https://expressbackend-production-8387.up.railway.app/tableOrder/freeTime?tableId=${tableId}&date=${date}`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -57,7 +57,7 @@ const TableOrderPage = () => {
 
     try {
       const res = await fetch(
-        "https://expressbackend-production-032e.up.railway.app/tableOrder/order",
+        "https://expressbackend-production-8387.up.railway.app/tableOrder/order",
         {
           method: "POST",
           headers: {

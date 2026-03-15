@@ -20,7 +20,7 @@ const AddDishPage = () => {
       formData.append("price", price);
       formData.append("image", image);
 
-      const res = await fetch("https://expressbackend-production-032e.up.railway.app/dish/add", {
+      const res = await fetch("https://expressbackend-production-8387.up.railway.app/dish/add", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
