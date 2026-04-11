@@ -16,7 +16,7 @@ const YourOrderPage: React.FC = () => {
   // =============================
   const findYourOrder = async () => {
     const res = await fetch(
-      "https://expressbackend-production-8387.up.railway.app/dishOrder/findYourOrder",
+      "https://expressbackend-production-8486.up.railway.app/dishOrder/findYourOrder",
       {
         method: "GET",
         headers: {
@@ -33,7 +33,7 @@ const YourOrderPage: React.FC = () => {
   // =============================
   const cancelOrder = async (id: number) => {
     const res = await fetch(
-      `https://expressbackend-production-8387.up.railway.app/dishOrder/cancel/${id}`,
+      `https://expressbackend-production-8486.up.railway.app/dishOrder/cancel/${id}`,
       {
         method: "PUT",
         headers: {

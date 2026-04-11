@@ -18,7 +18,7 @@ const AdminDishOrderPage: React.FC = () => {
   // ===============================
 
   const findAllDishOrder = async () => {
-    const res = await fetch(`https://expressbackend-production-8387.up.railway.app/dishOrder/findAll`, {
+    const res = await fetch(`https://expressbackend-production-8486.up.railway.app/dishOrder/findAll`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const AdminDishOrderPage: React.FC = () => {
 
   const dishOrderSuccess = async (id: number) => {
     const res = await fetch(
-      `https://expressbackend-production-8387.up.railway.app/dishOrder/success/${id}`,
+      `https://expressbackend-production-8486.up.railway.app/dishOrder/success/${id}`,
       {
         method: "PUT",
         headers: {

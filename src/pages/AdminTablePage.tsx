@@ -19,7 +19,7 @@ const AdminTablePage: React.FC = () => {
   // ===============================
 
   const getAllTable = async () => {
-    const res = await fetch(`https://expressbackend-production-8387.up.railway.app/table/findAll`, {
+    const res = await fetch(`https://expressbackend-production-8486.up.railway.app/table/findAll`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const AdminTablePage: React.FC = () => {
   };
 
   const addTable = async (capacity: number, status: boolean) => {
-    const res = await fetch(`https://expressbackend-production-8387.up.railway.app/table/add`, {
+    const res = await fetch(`https://expressbackend-production-8486.up.railway.app/table/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +56,7 @@ const AdminTablePage: React.FC = () => {
 
   const stopTable = async (id: number) => {
     const res = await fetch(
-      `https://expressbackend-production-8387.up.railway.app/table/stop/${id}`,
+      `https://expressbackend-production-8486.up.railway.app/table/stop/${id}`,
       {
         method: "PUT",
         headers: {
@@ -75,7 +75,7 @@ const AdminTablePage: React.FC = () => {
 
   const startTable = async (id: number) => {
     const res = await fetch(
-      `https://expressbackend-production-8387.up.railway.app/table/start/${id}`,
+      `https://expressbackend-production-8486.up.railway.app/table/start/${id}`,
       {
         method: "PUT",
         headers: {

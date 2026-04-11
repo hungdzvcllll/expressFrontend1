@@ -12,7 +12,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://expressbackend-production-8387.up.railway.app/user/login",
+        "https://expressbackend-production-8486.up.railway.app/user/login",
         { username, password }
       );
 
