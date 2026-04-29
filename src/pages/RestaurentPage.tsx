@@ -21,7 +21,7 @@ const RestaurantPage: React.FC = () => {
   const navigate = useNavigate();
   // ================= FETCH TABLE =================
   const getAllTable = async () => {
-    const res = await fetch("https://expressbackend-production-8387.up.railway.app/table/findAll", {
+    const res = await fetch("https://githubaction-production.up.railway.app/table/findAll", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const RestaurantPage: React.FC = () => {
 
   // ================= FETCH DISH =================
   const findAllDish = async () => {
-    const res = await fetch("https://expressbackend-production-8387.up.railway.app/dish/findAll", {
+    const res = await fetch("https://githubaction-production.up.railway.app/dish/findAll", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -77,9 +77,20 @@ const RestaurantPage: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+ useEffect(() => {
+  // Lấy token từ URL (?token=...)
+  const params = new URLSearchParams(window.location.search);
+  const tokenFromUrl = params.get("token");
+
+  if (tokenFromUrl) {
+    localStorage.setItem("token", tokenFromUrl);
+
+    // (optional) Xóa token khỏi URL cho gọn
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+
+  fetchData();
+}, []);
 
   if (loading)
     return <h2 style={{ textAlign: "center" }}>Đang tải dữ liệu...</h2>;
@@ -152,7 +163,7 @@ const RestaurantPage: React.FC = () => {
           {dishes.map((dish) => (
             <div key={dish.id} style={styles.card}>
               <img
-                src={"https://expressbackend-production-8387.up.railway.app" + dish.image}
+                src={"https://githubaction-production.up.railway.app" + dish.image}
                 alt={dish.name}
                 style={styles.dishImage}
               />

@@ -12,7 +12,7 @@ export default function ConfirmRegister() {
     e.preventDefault();
     try {
       await axios.post(
-        "https://expressbackend-production-8387.up.railway.app/user/confirmRegister",
+        "https://githubaction-production.up.railway.app/user/confirmRegister",
         { username, code }
       );
       alert("Confirm success!");

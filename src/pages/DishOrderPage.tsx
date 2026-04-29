@@ -16,7 +16,7 @@ export default function DishOrderPage() {
   // API: lấy danh sách món
   // ==========================
   const findAllDish = async () => {
-    const res = await fetch(`https://expressbackend-production-8387.up.railway.app/dish/findAll`, {
+    const res = await fetch(`https://githubaction-production.up.railway.app/dish/findAll`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export default function DishOrderPage() {
   // API: gửi order
   // ==========================
   const dishOrder = async (data: any) => {
-    const res = await fetch(`https://expressbackend-production-8387.up.railway.app/dishOrder/order`, {
+    const res = await fetch(`https://githubaction-production.up.railway.app/dishOrder/order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -121,7 +121,7 @@ export default function DishOrderPage() {
             }}
           >
             <img
-              src={"https://expressbackend-production-8387.up.railway.app"+dish.image}
+              src={"https://githubaction-production.up.railway.app"+dish.image}
               alt={dish.name}
               style={{ width: "100%", height: "150px", objectFit: "cover" }}
             />

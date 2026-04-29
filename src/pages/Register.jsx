@@ -21,7 +21,7 @@ export default function Register() {
     e.preventDefault();
     try {
       await axios.post(
-        "https://expressbackend-production-8387.up.railway.app/user/register",
+        "https://githubaction-production.up.railway.app/user/register",
         form
       );
       alert("Check email for code!");

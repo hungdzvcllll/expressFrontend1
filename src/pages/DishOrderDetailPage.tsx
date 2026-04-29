@@ -20,7 +20,7 @@ const DishOrderDetailPage: React.FC = () => {
   // ==========================
   const dishOrderDetail = async (id: string) => {
     const res = await fetch(
-      `https://expressbackend-production-8387.up.railway.app/dishOrderDetail/details/${id}`,
+      `https://githubaction-production.up.railway.app/dishOrderDetail/details/${id}`,
       {
         method: "GET",
         headers: {
