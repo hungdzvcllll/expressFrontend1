@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-const location = useLocation();
+
 interface Table {
   id: number;
   capacity: number;
@@ -21,6 +21,7 @@ const RestaurantPage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
   // ================= FETCH TABLE =================
   const getAllTable = async () => {
     const res = await fetch("https://githubaction-production.up.railway.app/table/findAll", {
