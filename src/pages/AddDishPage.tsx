@@ -20,7 +20,7 @@ const AddDishPage = () => {
       formData.append("price", price);
       formData.append("image", image);
 
-      const res = await fetch("https://expressbackend-production-8486.up.railway.app/dish/add", {
+      const res = await fetch("https://githubaction-production.up.railway.app/dish/add", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
@@ -77,8 +77,7 @@ const AddDishPage = () => {
         </div>
 
         <button type="submit">Thêm món</button>
-      </form>
-
+      </form>   
       {message && <p style={{ marginTop: "20px" }}>{message}</p>}
     </div>
   );

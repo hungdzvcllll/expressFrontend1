@@ -18,7 +18,7 @@ export default function YourTableOrderPage() {
 
   const findYourTableOrder = async () => {
     const res = await fetch(
-      "https://expressbackend-production-8486.up.railway.app/tableOrder/findYourOrder",
+      "https://githubaction-production.up.railway.app/tableOrder/findYourOrder",
       {
         method: "GET",
         headers: {
@@ -32,7 +32,7 @@ export default function YourTableOrderPage() {
 
   const cancelTableOrder = async (id: number) => {
     const res = await fetch(
-      `https://expressbackend-production-8486.up.railway.app/tableOrder/cancel/${id}`,
+      `https://githubaction-production.up.railway.app/tableOrder/cancel/${id}`,
       {
         method: "PUT",
         headers: {

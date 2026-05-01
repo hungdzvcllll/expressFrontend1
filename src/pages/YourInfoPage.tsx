@@ -14,7 +14,7 @@ export default function YourInfoPage() {
 
   const yourInfo = async () => {
     try {
-      const res = await fetch("https://expressbackend-production-8486.up.railway.app/user/yourInfo", {
+      const res = await fetch("https://githubaction-production.up.railway.app/user/yourInfo", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

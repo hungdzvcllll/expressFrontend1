@@ -23,7 +23,7 @@ const RestaurantPage: React.FC = () => {
   const navigate = useNavigate();
   // ================= FETCH TABLE =================
   const getAllTable = async () => {
-    const res = await fetch("https://expressbackend-production-8486.up.railway.app/table/findAll", {
+    const res = await fetch("https://githubaction-production.up.railway.app/table/findAll", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const RestaurantPage: React.FC = () => {
 
   // ================= FETCH DISH =================
   const findAllDish = async () => {
-    const res = await fetch("https://expressbackend-production-8486.up.railway.app/dish/findAll", {
+    const res = await fetch("https://githubaction-production.up.railway.app/dish/findAll", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -172,7 +172,7 @@ const RestaurantPage: React.FC = () => {
           {dishes.map((dish) => (
             <div key={dish.id} style={styles.card}>
               <img
-                src={"https://expressbackend-production-8486.up.railway.app" + dish.image}
+                src={"https://githubaction-production.up.railway.app" + dish.image}
                 alt={dish.name}
                 style={styles.dishImage}
               />
