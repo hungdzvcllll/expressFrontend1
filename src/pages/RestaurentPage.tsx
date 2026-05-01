@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+const location = useLocation();
 interface Table {
   id: number;
   capacity: number;
@@ -78,8 +80,26 @@ const RestaurantPage: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+  const params = new URLSearchParams(location.search);
+  const tokenFromUrl = params.get("token");
+
+  // 1. Nếu có token từ URL → lưu vào localStorage
+  if (tokenFromUrl) {
+    localStorage.setItem("token", tokenFromUrl);
+  }
+
+  // 2. Lấy token từ localStorage
+  const token = localStorage.getItem("token");
+
+  // 3. Nếu không có token → redirect login
+  if (!token) {
+    navigate("/login");
+    return;
+  }
+
+  // 4. Nếu có token → gọi API
+  fetchData();
+}, [location.search]);
 
   if (loading)
     return <h2 style={{ textAlign: "center" }}>Đang tải dữ liệu...</h2>;
