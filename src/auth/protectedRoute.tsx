@@ -9,7 +9,7 @@ interface Props {
 
 const ProtectedRoute: React.FC<Props> = ({ children, allowedRoles }) => {
   const token = localStorage.getItem("token");
-
+  console.log(token);
   if (!token || isTokenExpired(token)) {
     localStorage.removeItem("token");
     return <Navigate to="/login" replace />;
@@ -18,6 +18,7 @@ const ProtectedRoute: React.FC<Props> = ({ children, allowedRoles }) => {
   const role = getUserRole(token);
 
   if (!role || !allowedRoles.includes(role)) {
+    
     return <Navigate to="/unauthorized" replace />;
   }
 
